@@ -1,10 +1,12 @@
-age = int(input('Your Age :'))
+question = input('Give me a fruit name :')
 
-if age == 18:
-    print('18 is a good time!')
+if question == 'Apple':
+    print('Yes, it is a fruit.')
+elif question == 'Banana':
+    print('Yes, it is a fruit.')
 
-elif age < 0:
-    print('I can not believe this .')
+else:
+    print(question, ',is this a  fruit ?')
 
 elif age < 18:
     print(' You are younger than me .')
