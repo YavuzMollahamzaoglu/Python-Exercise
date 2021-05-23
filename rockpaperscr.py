@@ -1,47 +1,73 @@
 import random
 
-choices = ['rock', 'paper', 'scissors']
+comp_win = 0
+player_win = 0
 
-computer = random.choice(choices)
-player = None
+for i in range(3):
 
-while player not in choices:
-    player = input('rock, paper or scissors?:').lower()
+    choices = ['rock', 'paper', 'scissors']
 
-if player == computer:
-    print('computer:', computer)
-    print('player:', player)
-    print('Tie')
+    computer = random.choice(choices)
+    player = None
 
-elif player == 'rock':
-    if computer == 'paper':
+    while player not in choices:
+        player = input('rock, paper or scissors?:').lower()
+
+    if player == computer:
         print('computer:', computer)
         print('player:', player)
-        print('You lose!')
-    if computer == 'scissors':
-        print('computer:', computer)
-        print('player:', player)
-        print('You win!')
+        print('Tie')
+
+    elif player == 'rock':
+        if computer == 'paper':
+            print('computer:', computer)
+            print('player:', player)
+            print('You lose!')
+            comp_win += 1
+        if computer == 'scissors':
+            print('computer:', computer)
+            print('player:', player)
+            print('You win!')
+            player_win += 1
+
+    elif player == 'scissors':
+        if computer == 'paper':
+            print('computer:', computer)
+            print('player:', player)
+            print('You win!')
+            player_win += 1
+        if computer == 'scissors':
+            print('computer:', computer)
+            print('player:', player)
+            print('You lose!')
+            comp_win += 1
 
 
-elif player == 'scissors':
-    if computer == 'paper':
-        print('computer:', computer)
-        print('player:', player)
-        print('You win!')
-    if computer == 'scissors':
-        print('computer:', computer)
-        print('player:', player)
-        print('You lose!')
+
+    elif player == 'paper':
+        if computer == 'scissors':
+            print('computer:', computer)
+            print('player:', player)
+            print('You lose!')
+            comp_win += 1
+        if computer == 'rock':
+            print('computer:', computer)
+            print('player:', player)
+            print('You win!')
+            player_win += 1
+
+
+print(player_win)
+print(comp_win)
+
+if comp_win == player_win:
+    print('You got tie with computer !')
+
+elif comp_win > player_win:
+    print('Computer win against to you !')
+
+else:
+    print('You win against to computer !')
 
 
 
-elif player == 'paper':
-    if computer == 'scissors':
-        print('computer:', computer)
-        print('player:', player)
-        print('You lose!')
-    if computer == 'rock':
-        print('computer:', computer)
-        print('player:', player)
-        print('You win!')
